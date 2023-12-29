@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from "firebase/auth";
-
+import { configDotenv } from 'dotenv';
 
 const firebaseConfig = {
   apiKey: "AIzaSyBQpfrEiDPCItBGeiY9Z8pA1DWtS0DhoL4",

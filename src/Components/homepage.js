@@ -86,9 +86,9 @@ export function Homepage() {
       {loading && <Loading inputfromsearch={searchinput}></Loading>}
       {gifUrl && <Giphy updatesearchterm={updatesearchterm} fetchData={fetchData} inputfromsearch={searchinput} data={array}></Giphy>}
       {!loading && !gifUrl &&
-        <div className=' h-screen flex items-center justify-center'>
-          <div className="flex flex-col gap-20 mt-10 items-center justify-center ">
-            <div className="waviy">
+        <div className='vsm:max-sm:overflow-hidden h-screen flex items-center justify-center'>
+          <div className="vsm:max-sm:flex vsm:max-sm:justify-center vsm:max-sm:items-center flex  flex-col gap-20 md:mt-10 items-center justify-center ">
+            <div className="waviy vsm:max-sm:w-[300px]">
               <span style={{ '--i': 1 }}>S</span>
               <span style={{ '--i': 2 }}>E</span>
               <span style={{ '--i': 3 }}>A</span>
@@ -103,10 +103,10 @@ export function Homepage() {
               <span style={{ '--i': 12 }}>E</span>
             </div>
 
-            <div className="flex gap-5  w-[816px] h-[122px]">
-              <div className="rounded-xl items-center bg-gray-200 flex w-[742px] h-[74px]">
+            <div className="vsm:max-sm:flex vsm:max-sm:justify-center vsm:max-sm: vsm:max-sm: lg:flex lg:gap-5  md:w-[816px] md:h-[122px]">
+              <div className="vsm:max-sm:w-[100%] vsm:max-sm: vsm:max-sm: vsm:max-sm: rounded-xl items-center bg-gray-200 flex w-[742px] h-[74px]">
                 <img
-                  className=" mx-4 mt-1"
+                  className="vsm:max-sm:w-[34px] vsm:max-sm:h-[34px] mx-4 mt-1"
                   width="44"
                   height="44"
                   src="https://img.icons8.com/pastel-glyph/64/search--v2.png"
@@ -114,7 +114,7 @@ export function Homepage() {
                 />
                 <input
                   onChange={(e) => setSearchInput(e.target.value)}
-                  className="bg-gray-200  font-semibold outline-0 rounded-xl w-[642px] h-[64px] text-xl  placeholder-black"
+                  className="bg-gray-200 vsm:max-sm:w-[70%] vsm:max-sm:text-lg font-semibold outline-0 rounded-xl w-[642px] h-[64px] text-xl  placeholder-black"
                   placeholder="Article name or keywords..."
                   type="text"
                 />
@@ -123,16 +123,26 @@ export function Homepage() {
                 <button
                   onClick={checkinput}
                   type="button"
-                  className="text-lg rounded-xl bg-black w-[110px] h-[74px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                  className="vsm:max-sm:hidden text-lg rounded-xl bg-black w-[110px] h-[74px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                 >
                   Search
                 </button>
               </Link>
               {showWarning && <ToastContainer></ToastContainer>}
             </div>
-            <button onClick={handlelogout}
-              className="text-lg rounded-xl bg-black w-[120px] h-[54px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
-              Logout</button>
+
+            <div className=' vsm:max-sm:flex vsm:max-sm:gap-2 '>
+              <button onClick={handlelogout}
+                className=" text-lg rounded-xl bg-black w-[120px] h-[54px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                Logout</button>
+                <button
+                onClick={checkinput}
+                type="button"
+                className=" sm:hidden vsm:max-sm:h-[54px] text-lg rounded-xl bg-black w-[110px] h-[74px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              >
+                Search
+              </button>
+            </div>
           </div>
 
         </div>

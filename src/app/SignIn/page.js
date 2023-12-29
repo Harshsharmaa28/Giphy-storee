@@ -60,7 +60,7 @@ export default function SignIn() {
     <section>
       {!checkcredentials && <ToastContainer></ToastContainer>}
       <div className="min-h-screen flex flex-col gap-14  items-center justify-center px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-24">
-        <div className="waviy ml-10">
+        <div className="waviy vsm:max-sm:w-[250px]">
           <span style={{ '--i': 1 }}>G</span>
           <span style={{ '--i': 2 }}>I</span>
           <span style={{ '--i': 3 }}>P</span>

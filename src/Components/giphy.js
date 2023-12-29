@@ -37,7 +37,7 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                 return (
                     <div className="flex flex-col items-center gap-2" key={index}>
                         <img
-                            className="border-8 border-black lg:w-[330px] lg:h-[300px] md:w-[250px] md:h-[250px] vsm:max-sm:w-[300px] vsm:max-sm:h-[200px] object-cover"
+                            className=" border-8 border-black lg:w-[330px] lg:h-[300px] md:w-[250px] md:h-[250px] vsm:max-sm:w-[300px] vsm:max-sm:h-[150px] object-cover"
                             src={gifurl}
                             alt="Error"
                         />
@@ -53,7 +53,7 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
     };
 
     return (
-        <div className="max-h-screen flex flex-col">
+        <div className="vsm:max-sm: max-h-screen flex flex-col">
             <div>
                 <button onClick={handlehome} className="absolute mx-5 mt-2 text-2xl font-bold">
                     Home
@@ -79,18 +79,18 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                     <button
                         onClick={handlebutton}
                         type="button"
-                        className="text-lg rounded-xl bg-black w-[110px] h-[64px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        className="vsm:max-sm:w-[100px] vsm:max-sm:ml-10 vsm:max-sm:text-md text-lg rounded-xl bg-black w-[110px] h-[64px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
                         Search
                     </button>
                 </div>
             </div>
-            <div className="max-w-screen justify-between vsm:max-sm:ml-12 lg:mx-36 flex flex-wrap">
+            <div className="max-w-screen justify-between vsm:max-sm:ml-12 vsm:max-sm:mt-10 lg:mx-36  gap-2 flex flex-wrap">
                 {showgif()}
             </div>
             <div className="mt-20">
                 <div className="mt-2 justify-center flex items-center">
-                    <div className="space-x-4">
+                    <div className="space-x-4 vsm:max-sm:-mt-20">
                         <motion.button
                             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                             className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
