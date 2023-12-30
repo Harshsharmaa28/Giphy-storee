@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { app, auth } from '../firebase/firebaseconfig';
-import { getAuth, signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { useRouter } from 'next/navigation';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,28 +15,28 @@ export default function SignIn() {
   const [password, setPassword] = useState('');
   const [checkcredentials, setcheckcredential] = useState(true);
 
-  const handlesigninwithgoogle = () =>{
+  const handlesigninwithgoogle = () => {
     const provider = new GoogleAuthProvider();
     signInWithPopup(auth, provider)
-    .then((result) => {
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      // The signed-in user info.
-      router.push('/');
-      const user = result.user;
-      // IdP data available using getAdditionalUserInfo(result)
-      // ...
-    }).catch((error) => {
-      // Handle Errors here.
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        router.push('/');
+        const user = result.user;
+        // IdP data available using getAdditionalUserInfo(result)
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
 
-      const email = error.customData.email;
+        const email = error.customData.email;
 
-      const credential = GoogleAuthProvider.credentialFromError(error);
-      // ...
-    });
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
   }
 
   const handleSignIn = () => {
@@ -107,10 +107,9 @@ export default function SignIn() {
                     {' '}
                     Password{' '}
                   </label>
-                  <a href="#" title="" className="text-sm font-semibold text-black hover:underline">
-                    {' '}
-                    Forgot password?{' '}
-                  </a>
+                  <Link href={'/'} className="text-sm font-semibold text-black hover:underline">
+                    Forgot Password ?
+                  </Link>
                 </div>
                 <div className="mt-2">
                   <input
@@ -135,7 +134,7 @@ export default function SignIn() {
           </form>
           <div className="mt-3 space-y-3">
             <button
-            onClick={handlesigninwithgoogle}
+              onClick={handlesigninwithgoogle}
               type="button"
               className="relative inline-flex w-full items-center justify-center rounded-md border border-gray-400 bg-white px-3.5 py-2.5 font-semibold text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-black focus:bg-gray-100 focus:text-black focus:outline-none"
             >

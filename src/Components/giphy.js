@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { motion } from 'framer-motion';
 
@@ -41,9 +40,9 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                             src={gifurl}
                             alt="Error"
                         />
-                        <button className="rounded-full bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
+                        {/* <button className="rounded-full bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                             Copy URL
-                        </button>
+                        </button> */}
                     </div>
                 );
             });
@@ -59,7 +58,7 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                     Home
                 </button>
             </div>
-            <div className="vsm:max-sm:flex justify-center h-[200px]">
+            <div className="vsm:max-sm:max-w-[70%] vsm:max-sm:flex vsm:max-sm:mx-[4rem]   justify-center h-[200px]">
                 <div className="mt-12 flex justify-center gap-5 w-[100%] h-[70px]">
                     <div className="vsm:max-sm:item-center rounded-xl items-center bg-gray-200 flex w-[80%] h-[64px]">
                         <img
@@ -79,18 +78,18 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                     <button
                         onClick={handlebutton}
                         type="button"
-                        className="vsm:max-sm:w-[100px] vsm:max-sm:ml-10 vsm:max-sm:text-md text-lg rounded-xl bg-black w-[110px] h-[64px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                        className="vsm:max-sm:w-[100px] vsm:max-sm:ml-[6.2rem] vsm:max-sm:text-md text-lg rounded-xl bg-black w-[110px] h-[64px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
                         Search
                     </button>
                 </div>
             </div>
-            <div className="max-w-screen justify-between vsm:max-sm:ml-12 vsm:max-sm:mt-10 lg:mx-36  gap-2 flex flex-wrap">
+            <div className="max-w-screen justify-between vsm:max-sm:ml-12 vsm:max-sm:mt-10 lg:mx-36  gap-5 flex flex-wrap">
                 {showgif()}
             </div>
             <div className="mt-20">
                 <div className="mt-2 justify-center flex items-center">
-                    <div className="space-x-4 vsm:max-sm:-mt-20">
+                    <div className="space-x-4 vsm:max-sm:-mt-14">
                         <motion.button
                             onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
                             className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"

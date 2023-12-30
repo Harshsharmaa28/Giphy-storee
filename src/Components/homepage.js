@@ -1,7 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
 import Loading from './loading';
-import Link from 'next/link';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Giphy from './giphy';
@@ -15,13 +14,12 @@ export function Homepage() {
   const [showWarning, setShowWarning] = useState(false);
   const [array, setarray] = useState();
 
-  const user = auth.currentUser;
+  // const user = auth.currentUser;
 
-  console.log(user)
+  // console.log(user)
   const router = useRouter();
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
-      console.log(user)
       if (!user) {
         router.push('/SignIn');
       }
@@ -119,15 +117,13 @@ export function Homepage() {
                   type="text"
                 />
               </div>
-              <Link href={'/'}>
-                <button
-                  onClick={checkinput}
-                  type="button"
-                  className="vsm:max-sm:hidden text-lg rounded-xl bg-black w-[110px] h-[74px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-                >
-                  Search
-                </button>
-              </Link>
+              <button
+                onClick={checkinput}
+                type="button"
+                className="vsm:max-sm:hidden text-lg rounded-xl bg-black w-[110px] h-[74px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+              >
+                Search
+              </button>
               {showWarning && <ToastContainer></ToastContainer>}
             </div>
 
@@ -135,7 +131,7 @@ export function Homepage() {
               <button onClick={handlelogout}
                 className=" text-lg rounded-xl bg-black w-[120px] h-[54px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black">
                 Logout</button>
-                <button
+              <button
                 onClick={checkinput}
                 type="button"
                 className=" sm:hidden vsm:max-sm:h-[54px] text-lg rounded-xl bg-black w-[110px] h-[74px] font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"

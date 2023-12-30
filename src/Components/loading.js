@@ -1,8 +1,10 @@
+import '/src/Components/loading.css'
+
 export default function Loading({inputfromsearch}){
     // You can add any UI inside Loading, including a Skeleton.
     return (
         <div>
-            <div className="flex justify-center min-h-screen">
+            <div className="flex justify-center min-h-screen ">
                 <div className=" mt-10 flex justify-center gap-5 absolute w-[100%] h-[70px]">
                     <div className="rounded-xl items-center bg-gray-200 flex w-[80%] h-[64px]">
                         <img

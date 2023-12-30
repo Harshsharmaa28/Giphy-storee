@@ -8,8 +8,8 @@ import Image from 'next/image'
 // className="flex min-h-screen flex-col items-center justify-between p-24"
 export default function Home() {
   return (
-    <main className=''>
-      <div className=''>
+    <main className=' h-screen w-screen'>
+      <div className='h-screen w-screen'>
         <Homepage></Homepage>
       </div>
     </main>
