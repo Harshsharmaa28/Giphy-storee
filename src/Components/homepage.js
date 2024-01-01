@@ -28,7 +28,7 @@ export function Homepage() {
   }, []);
 
   const handlelogout = async () => {
-    console.log("clicked")
+    // console.log("clicked")
     try {
       await auth.signOut();
       console.log("ho gaya logout")
@@ -38,7 +38,7 @@ export function Homepage() {
   };
   const checkinput = () => {
     if (searchinput != null) {
-      fetchData();
+      // fetchData();
     }
     else {
       setShowWarning(true);
@@ -111,7 +111,10 @@ export function Homepage() {
                   alt="search--v2"
                 />
                 <input
-                  onChange={(e) => setSearchInput(e.target.value)}
+                  onChange={(e) =>{ 
+                    setSearchInput(e.target.value)
+                    fetchData();
+                  }}
                   className="bg-gray-200 vsm:max-sm:w-[70%] vsm:max-sm:text-lg font-semibold outline-0 rounded-xl w-[642px] h-[64px] text-xl  placeholder-black"
                   placeholder="Article name or keywords..."
                   type="text"

@@ -14,7 +14,7 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
     }, [searchinput, updatesearchterm]);
 
     function handlebutton() {
-        fetchData();
+        // fetchData();
     }
 
     function handlehome() {
@@ -58,7 +58,7 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                     Home
                 </button>
             </div>
-            <div className="vsm:max-sm:max-w-[70%] vsm:max-sm:flex vsm:max-sm:mx-[4rem]   justify-center h-[200px]">
+            <div className="vsm:max-sm:max-w-[70%] vsm:max-sm:flex vsm:max-sm:mx-[4rem] justify-center h-[200px]">
                 <div className="mt-12 flex justify-center gap-5 w-[100%] h-[70px]">
                     <div className="vsm:max-sm:item-center rounded-xl items-center bg-gray-200 flex w-[80%] h-[64px]">
                         <img
@@ -69,7 +69,10 @@ export default function Giphy({ updatesearchterm, fetchData, inputfromsearch, da
                             alt="search--v2"
                         />
                         <input
-                            onChange={(e) => setSearchInput(e.target.value)}
+                            onChange={(e) =>{ 
+                                setSearchInput(e.target.value);
+                                fetchData();
+                            }}
                             className="bg-gray-200 text-2xl font-semibold outline-0 rounded-xl w-[642px] h-[64px] placeholder-black"
                             value={inputfromsearch}
                             type="text"

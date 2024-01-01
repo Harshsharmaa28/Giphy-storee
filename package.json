@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build:css": "npx tailwindcss build styles.css -o output.css",
+    "build:styles": "postcss styles/globals.css -o public/build/tailwind.css",
     "dev": "next dev",
-    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -25,6 +24,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
-    "postcss": "^8.4.32"
+    "postcss": "^8.4.32",
+    "postcss-cli": "^11.0.0"
   }
 }
